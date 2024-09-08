@@ -42,35 +42,23 @@ const Home = () => {
         <div className="homeContainer">
             <h1 className="homeContainer__heading">Top Stories</h1>
             <div className="homeContainer__homeArticles">
-                {topStories.map((story, index) => {
+                {topStories.map((story) => {
                     return (
                         <div>
                             {topStories && (
                                 <ArticleCard
-                                    webTitle={
-                                        topStories[index]["fields"]["headline"]
-                                    }
-                                    urlToImage={
-                                        topStories[index]["fields"]["thumbnail"]
-                                    }
+                                    webTitle={story["fields"]["headline"]}
+                                    urlToImage={story["fields"]["thumbnail"]}
                                     publishedDate={
-                                        topStories[index]["fields"][
-                                            "firstPublicationDate"
-                                        ]
+                                        story["fields"]["firstPublicationDate"]
                                     }
                                 />
                             ) ? (
                                 <ArticleCard
-                                    webTitle={
-                                        topStories[index]["fields"]["headline"]
-                                    }
-                                    urlToImage={
-                                        topStories[index]["fields"]["thumbnail"]
-                                    }
+                                    webTitle={story["fields"]["headline"]}
+                                    urlToImage={story["fields"]["thumbnail"]}
                                     publishedDate={
-                                        topStories[index]["fields"][
-                                            "firstPublicationDate"
-                                        ]
+                                        story["fields"]["firstPublicationDate"]
                                     }
                                 />
                             ) : (
