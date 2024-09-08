@@ -1,0 +1,12 @@
+.weatherContainer {
+    background-color: coral;
+    padding: 20px 50px;
+    &__heading {
+        margin-left: 25px;
+    }
+    &__homeArticles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
