@@ -3,6 +3,9 @@
     &__heading {
         margin-left: 10px;
     }
+    &__content {
+        display: flex;
+    }
     &__homeArticles {
         display: flex;
         flex-wrap: wrap;

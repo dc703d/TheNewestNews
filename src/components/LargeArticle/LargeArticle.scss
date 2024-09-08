@@ -1,20 +1,24 @@
-.card {
+.largeCard {
     //box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
     margin: 8px;
-    width: 250px;
-    height: 280px;
+    width: 500px;
+    //height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     &__heading {
-        font-size: 12px;
+        font-size: 24px;
     }
     &__image {
-        width: 250px;
-        padding-bottom: 5px;
+        width: 500px;
+        padding-bottom: 0px;
     }
     &__date {
-        font-size: 10px;
+        font-size: 14px;
         text-align: right;
+    }
+    &__byline {
+        font-size: 12px;
+        margin: 0px;
     }
 }

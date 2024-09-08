@@ -1,10 +1,10 @@
-import './Nav.scss';
+import "./Nav.scss";
 
 const Nav = () => {
     return (
-        <div className='navigation'>
-            <h1 className='navigation__heading'>NewsPulse</h1>
-            <ul className='navigation__list'>
+        <div className="navigation">
+            <h1 className="navigation__heading">TheNewestNews</h1>
+            <ul className="navigation__list">
                 <li>Trending</li>
                 <li>Business</li>
                 <li>Entertainment</li>
@@ -15,6 +15,6 @@ const Nav = () => {
             </ul>
         </div>
     );
-}
+};
 
 export default Nav;
