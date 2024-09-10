@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
-import "./Home.scss";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import LargeArticle from "../LargeArticle/LargeArticle";
 
-const Home = () => {
+type LargeArticleTilesProps = {
+    url: string;
+    heading?: string;
+};
+
+const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
     const [topStories, setTopStories] = useState<any[]>([]);
     const [isVisible, setIsVisible] = useState(true);
 
     const getTopStories = () => {
-        fetch(
-            "https://content.guardianapis.com/uk-news?show-fields=all&api-key=dc818f16-2179-4123-a127-0576c3fbcf15"
-        )
+        fetch(url)
             .then((res) => {
                 return res.json();
             })
@@ -25,9 +27,10 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="homeContainer">
-            <div className="homeContainer__content">
-                <div className="homeContainer__largeArticle">
+        <div className="techContainer">
+            <h1>{heading}</h1>
+            <div className="techContainer__content">
+                <div className="techContainer__largeArticle">
                     {topStories.slice(0, 1).map((story) => {
                         return (
                             <div>
@@ -43,6 +46,7 @@ const Home = () => {
                                             ]
                                         }
                                         trailText={story["fields"]["trailText"]}
+                                        key={story["id"]}
                                     />
                                 ) ? (
                                     <LargeArticle
@@ -56,6 +60,7 @@ const Home = () => {
                                             ]
                                         }
                                         trailText={story["fields"]["trailText"]}
+                                        key={story["id"]}
                                     />
                                 ) : (
                                     "Loading Content..."
@@ -65,7 +70,7 @@ const Home = () => {
                     })}
                 </div>
 
-                <div className="homeContainer__homeArticles">
+                <div className="techContainer__homeArticles">
                     {topStories.slice(1, 7).map((story) => {
                         return (
                             <div>
@@ -80,6 +85,7 @@ const Home = () => {
                                                 "firstPublicationDate"
                                             ]
                                         }
+                                        key={story["id"]}
                                     />
                                 ) ? (
                                     <ArticleCard
@@ -92,6 +98,7 @@ const Home = () => {
                                                 "firstPublicationDate"
                                             ]
                                         }
+                                        key={story["id"]}
                                     />
                                 ) : (
                                     "Loading Content..."
@@ -105,4 +112,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default LargeArticleTiles;

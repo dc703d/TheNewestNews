@@ -1,44 +1,42 @@
 import { useState, useEffect } from "react";
 import ArticleCard from "../ArticleCard/ArticleCard";
-import "./HighlightBanner.scss";
+import "./WeatherBanner.scss";
 
-const HighlightBanner = () => {
-    const [highlights, setHighlights] = useState<any[]>([]);
+const WeatherBanner = () => {
+    const [weather, setWeather] = useState<any[]>([]);
 
-    const getHighlights = () => {
+    const getWeather = () => {
         fetch(
             "https://content.guardianapis.com/weather?show-fields=all&api-key=dc818f16-2179-4123-a127-0576c3fbcf15"
         )
             .then((res) => {
                 return res.json();
             })
-            .then((data) =>
-                setHighlights(data["response"]["results"].slice(0, 5))
-            )
+            .then((data) => setWeather(data["response"]["results"].slice(0, 5)))
             .catch((err) => console.log(err));
     };
 
     useEffect(() => {
-        getHighlights();
+        getWeather();
     }, []);
 
     return (
         <div className="weatherContainer">
             <h1 className="weatherContainer__heading">Weather</h1>
             <div className="weatherContainer__homeArticles">
-                {highlights.map((story, index) => {
+                {weather.map((story, index) => {
                     return (
                         <div>
-                            {highlights && (
+                            {weather && (
                                 <ArticleCard
                                     webTitle={
-                                        highlights[index]["fields"]["headline"]
+                                        weather[index]["fields"]["headline"]
                                     }
                                     urlToImage={
-                                        highlights[index]["fields"]["thumbnail"]
+                                        weather[index]["fields"]["thumbnail"]
                                     }
                                     publishedDate={
-                                        highlights[index]["fields"][
+                                        weather[index]["fields"][
                                             "firstPublicationDate"
                                         ]
                                     }
@@ -46,16 +44,17 @@ const HighlightBanner = () => {
                             ) ? (
                                 <ArticleCard
                                     webTitle={
-                                        highlights[index]["fields"]["headline"]
+                                        weather[index]["fields"]["headline"]
                                     }
                                     urlToImage={
-                                        highlights[index]["fields"]["thumbnail"]
+                                        weather[index]["fields"]["thumbnail"]
                                     }
                                     publishedDate={
-                                        highlights[index]["fields"][
+                                        weather[index]["fields"][
                                             "firstPublicationDate"
                                         ]
                                     }
+                                    key={story["id"]}
                                 />
                             ) : (
                                 "Loading Content..."
@@ -68,4 +67,4 @@ const HighlightBanner = () => {
     );
 };
 
-export default HighlightBanner;
+export default WeatherBanner;
