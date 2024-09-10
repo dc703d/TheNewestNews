@@ -6,15 +6,21 @@ import SearchBar from "../SearchBar/SearchBar";
 const SearchSection = () => {
     const [content, setContent] = useState<any[]>([]);
 
-    const getContent = () => {
-        fetch(
-            "https://content.guardianapis.com/search?show-fields=all&api-key=dc818f16-2179-4123-a127-0576c3fbcf15"
-        )
-            .then((res) => {
-                return res.json();
-            })
-            .then((data) => setContent(data["response"]["results"]))
-            .catch((err) => console.log(err));
+    const getContent = async () => {
+        let pages: string | any[] = [];
+        for (let i = 1; i <= 3; i++) {
+            const response = await fetch(
+                `https://content.guardianapis.com/search?page=${i}&show-fields=all&api-key=3bdabd26-081c-4be3-acfa-e73952c73518`
+            );
+            const data = await response.json();
+            pages.push(data["response"]["results"]);
+        }
+        let pages1 = pages[0];
+        let pages2 = pages[1];
+        let pages3 = pages[2];
+        let allPages = pages1.concat(pages2, pages3);
+        console.log(allPages);
+        setContent(allPages);
     };
 
     useEffect(() => {

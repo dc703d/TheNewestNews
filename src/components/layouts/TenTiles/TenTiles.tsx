@@ -43,6 +43,7 @@ const TenTiles = ({ url, heading }: TenTilesProps) => {
                                             "firstPublicationDate"
                                         ]
                                     }
+                                    key={story["id"]}
                                 />
                             ) ? (
                                 <ArticleCard

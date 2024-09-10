@@ -6,7 +6,7 @@ import World from "./components/World/World";
 import WeatherBanner from "./components/WeatherBanner/WeatherBanner";
 import MindAndBody from "./components/MindAndBody/MindAndBody";
 import MoreToExplore from "./components/MoreToExplore/MoreToExplore";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
 import TechSection from "./components/TechSection/TechSection";
 import BusinessSection from "./components/BusinessSection/BusinessSection";
 import SportsSection from "./components/SportsSection/SportsSection";
@@ -14,6 +14,7 @@ import ScienceSection from "./components/ScienceSection/ScienceSection";
 import HealthSection from "./components/HealthSection/HealthSection";
 import EntertainmentSection from "./components/EntertainmentSection/EntertainmentSection";
 import SearchSection from "./components/SearchSection/SearchSection";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 const App = () => {
     //const [count, setCount] = useState(0)
@@ -27,6 +28,7 @@ const App = () => {
                         path="/"
                         element={
                             <>
+                                <SearchBar />
                                 <Home />
                                 <WeatherBanner />
                                 <World />
@@ -39,6 +41,7 @@ const App = () => {
                         path="/technology"
                         element={
                             <>
+                                <SearchBar />
                                 <TechSection />
                             </>
                         }
@@ -47,6 +50,7 @@ const App = () => {
                         path="/business"
                         element={
                             <>
+                                <SearchBar />
                                 <BusinessSection />
                             </>
                         }
@@ -55,6 +59,7 @@ const App = () => {
                         path="/sports"
                         element={
                             <>
+                                <SearchBar />
                                 <SportsSection />
                             </>
                         }
@@ -63,6 +68,7 @@ const App = () => {
                         path="/science"
                         element={
                             <>
+                                <SearchBar />
                                 <ScienceSection />
                             </>
                         }
@@ -71,6 +77,7 @@ const App = () => {
                         path="/health"
                         element={
                             <>
+                                <SearchBar />
                                 <HealthSection />
                             </>
                         }
@@ -79,6 +86,7 @@ const App = () => {
                         path="/entertainment"
                         element={
                             <>
+                                <SearchBar />
                                 <EntertainmentSection />
                             </>
                         }
@@ -91,6 +99,7 @@ const App = () => {
                             </>
                         }
                     />
+                    <Route path="/:id" />
                 </Routes>
             </>
         </BrowserRouter>
