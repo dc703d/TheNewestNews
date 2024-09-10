@@ -13,7 +13,7 @@ import SportsSection from "./components/SportsSection/SportsSection";
 import ScienceSection from "./components/ScienceSection/ScienceSection";
 import HealthSection from "./components/HealthSection/HealthSection";
 import EntertainmentSection from "./components/EntertainmentSection/EntertainmentSection";
-import SearchBar from "./components/SearchBar/SearchBar";
+import SearchSection from "./components/SearchSection/SearchSection";
 
 const App = () => {
     //const [count, setCount] = useState(0)
@@ -22,7 +22,6 @@ const App = () => {
         <BrowserRouter>
             <>
                 <Nav />
-                <SearchBar />
                 <Routes>
                     <Route
                         path="/"
@@ -81,6 +80,14 @@ const App = () => {
                         element={
                             <>
                                 <EntertainmentSection />
+                            </>
+                        }
+                    />
+                    <Route
+                        path="/search"
+                        element={
+                            <>
+                                <SearchSection />
                             </>
                         }
                     />
