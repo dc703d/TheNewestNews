@@ -1,5 +1,5 @@
 import "./MoreToExplore.scss";
-import LargeArticleTiles from "../LargeArticleTiles/LargeArticleTiles";
+import LargeArticleTiles from "../layouts/LargeArticleTiles/LargeArticleTiles";
 
 const MoreToExplore = () => {
     return (

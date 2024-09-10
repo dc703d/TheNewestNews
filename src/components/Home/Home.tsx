@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Home.scss";
-import ArticleCard from "../ArticleCard/ArticleCard";
-import LargeArticle from "../LargeArticle/LargeArticle";
+import ArticleCard from "../layouts/ArticleCard/ArticleCard";
+import LargeArticle from "../layouts/LargeArticle/LargeArticle";
 
 const Home = () => {
     const [topStories, setTopStories] = useState<any[]>([]);

@@ -7,6 +7,10 @@
     padding: 5px 0px;
     &__heading {
         margin: 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
     }
     &__list {
         display: flex;
@@ -16,5 +20,9 @@
         text-decoration: none;
         list-style-type: none;
         gap: 30px;
+        &--item {
+            color: white;
+            text-decoration: none;
+        }
     }
 }

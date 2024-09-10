@@ -1,44 +1,45 @@
 import { useState, useEffect } from "react";
-import ArticleCard from "../layouts/ArticleCard/ArticleCard";
-import "./MindAndBody.scss";
+import ArticleCard from "../ArticleCard/ArticleCard";
+import "./TenTiles.scss";
 
-const MindAndBody = () => {
-    const [wellness, setWellness] = useState<any[]>([]);
+type TenTilesProps = {
+    url: string;
+    heading?: string;
+};
 
-    const getWellness = () => {
-        fetch(
-            "https://content.guardianapis.com/wellness?show-fields=all&api-key=dc818f16-2179-4123-a127-0576c3fbcf15"
-        )
+const TenTiles = ({ url, heading }: TenTilesProps) => {
+    const [content, setContent] = useState<any[]>([]);
+
+    const getContent = () => {
+        fetch(url)
             .then((res) => {
                 return res.json();
             })
-            .then((data) =>
-                setWellness(data["response"]["results"].slice(0, 5))
-            )
+            .then((data) => setContent(data["response"]["results"]))
             .catch((err) => console.log(err));
     };
 
     useEffect(() => {
-        getWellness();
+        getContent();
     }, []);
 
     return (
-        <div className="wellnessContainer">
-            <h1 className="wellnessContainer__heading">Mind & Body</h1>
-            <div className="wellnessContainer__homeArticles">
-                {wellness.map((story, index) => {
+        <div className="contentContainer">
+            <h1 className="contentContainer__heading">{heading}</h1>
+            <div className="contentContainer__contentArticles">
+                {content.map((story, index) => {
                     return (
                         <div>
-                            {wellness && (
+                            {content && (
                                 <ArticleCard
                                     webTitle={
-                                        wellness[index]["fields"]["headline"]
+                                        content[index]["fields"]["headline"]
                                     }
                                     urlToImage={
-                                        wellness[index]["fields"]["thumbnail"]
+                                        content[index]["fields"]["thumbnail"]
                                     }
                                     publishedDate={
-                                        wellness[index]["fields"][
+                                        content[index]["fields"][
                                             "firstPublicationDate"
                                         ]
                                     }
@@ -46,16 +47,17 @@ const MindAndBody = () => {
                             ) ? (
                                 <ArticleCard
                                     webTitle={
-                                        wellness[index]["fields"]["headline"]
+                                        content[index]["fields"]["headline"]
                                     }
                                     urlToImage={
-                                        wellness[index]["fields"]["thumbnail"]
+                                        content[index]["fields"]["thumbnail"]
                                     }
                                     publishedDate={
-                                        wellness[index]["fields"][
+                                        content[index]["fields"][
                                             "firstPublicationDate"
                                         ]
                                     }
+                                    key={story["id"]}
                                 />
                             ) : (
                                 "Loading Content..."
@@ -68,4 +70,4 @@ const MindAndBody = () => {
     );
 };
 
-export default MindAndBody;
+export default TenTiles;

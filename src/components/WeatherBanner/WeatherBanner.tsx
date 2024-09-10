@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ArticleCard from "../ArticleCard/ArticleCard";
+import ArticleCard from "../layouts/ArticleCard/ArticleCard";
 import "./WeatherBanner.scss";
 
 const WeatherBanner = () => {
