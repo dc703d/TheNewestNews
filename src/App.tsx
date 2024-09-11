@@ -15,6 +15,7 @@ import HealthSection from "./components/HealthSection/HealthSection";
 import EntertainmentSection from "./components/EntertainmentSection/EntertainmentSection";
 import SearchSection from "./components/SearchSection/SearchSection";
 import SearchBar from "./components/SearchBar/SearchBar";
+import FullArticle from "./components/FullArticle/FullArticle";
 
 const App = () => {
     //const [count, setCount] = useState(0)
@@ -99,7 +100,15 @@ const App = () => {
                             </>
                         }
                     />
-                    <Route path="/:id" />
+                    <Route
+                        path="/:id"
+                        element={
+                            <>
+                                <SearchBar />
+                                <FullArticle />
+                            </>
+                        }
+                    />
                 </Routes>
             </>
         </BrowserRouter>

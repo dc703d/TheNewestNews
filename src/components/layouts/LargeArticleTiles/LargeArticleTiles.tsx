@@ -33,7 +33,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                 <div className="techContainer__largeArticle">
                     {topStories.slice(0, 1).map((story) => {
                         return (
-                            <div>
+                            <div key={story.id}>
                                 {topStories && (
                                     <LargeArticle
                                         webTitle={story["fields"]["headline"]}
@@ -46,7 +46,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                                             ]
                                         }
                                         trailText={story["fields"]["trailText"]}
-                                        key={story["id"]}
+                                        key={story.id}
                                     />
                                 ) ? (
                                     <LargeArticle
@@ -60,7 +60,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                                             ]
                                         }
                                         trailText={story["fields"]["trailText"]}
-                                        key={story["id"]}
+                                        key={story.id}
                                     />
                                 ) : (
                                     "Loading Content..."
@@ -73,7 +73,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                 <div className="techContainer__homeArticles">
                     {topStories.slice(1, 7).map((story) => {
                         return (
-                            <div>
+                            <div key={story.id}>
                                 {topStories && (
                                     <ArticleCard
                                         webTitle={story["fields"]["headline"]}
@@ -85,7 +85,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                                                 "firstPublicationDate"
                                             ]
                                         }
-                                        key={story["id"]}
+                                        key={story.id}
                                     />
                                 ) ? (
                                     <ArticleCard
@@ -98,7 +98,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                                                 "firstPublicationDate"
                                             ]
                                         }
-                                        key={story["id"]}
+                                        key={story.id}
                                     />
                                 ) : (
                                     "Loading Content..."

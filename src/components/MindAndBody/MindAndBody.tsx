@@ -26,35 +26,23 @@ const MindAndBody = () => {
         <div className="wellnessContainer">
             <h1 className="wellnessContainer__heading">Mind & Body</h1>
             <div className="wellnessContainer__homeArticles">
-                {wellness.map((story, index) => {
+                {wellness.map((story) => {
                     return (
-                        <div>
+                        <div key={story.id}>
                             {wellness && (
                                 <ArticleCard
-                                    webTitle={
-                                        wellness[index]["fields"]["headline"]
-                                    }
-                                    urlToImage={
-                                        wellness[index]["fields"]["thumbnail"]
-                                    }
+                                    webTitle={story["fields"]["headline"]}
+                                    urlToImage={story["fields"]["thumbnail"]}
                                     publishedDate={
-                                        wellness[index]["fields"][
-                                            "firstPublicationDate"
-                                        ]
+                                        story["fields"]["firstPublicationDate"]
                                     }
                                 />
                             ) ? (
                                 <ArticleCard
-                                    webTitle={
-                                        wellness[index]["fields"]["headline"]
-                                    }
-                                    urlToImage={
-                                        wellness[index]["fields"]["thumbnail"]
-                                    }
+                                    webTitle={story["fields"]["headline"]}
+                                    urlToImage={story["fields"]["thumbnail"]}
                                     publishedDate={
-                                        wellness[index]["fields"][
-                                            "firstPublicationDate"
-                                        ]
+                                        story["fields"]["firstPublicationDate"]
                                     }
                                 />
                             ) : (

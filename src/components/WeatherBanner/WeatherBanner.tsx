@@ -24,37 +24,24 @@ const WeatherBanner = () => {
         <div className="weatherContainer">
             <h1 className="weatherContainer__heading">Weather</h1>
             <div className="weatherContainer__homeArticles">
-                {weather.map((story, index) => {
+                {weather.map((story) => {
                     return (
-                        <div>
+                        <div key={story.id}>
                             {weather && (
                                 <ArticleCard
-                                    webTitle={
-                                        weather[index]["fields"]["headline"]
-                                    }
-                                    urlToImage={
-                                        weather[index]["fields"]["thumbnail"]
-                                    }
+                                    webTitle={story["fields"]["headline"]}
+                                    urlToImage={story["fields"]["thumbnail"]}
                                     publishedDate={
-                                        weather[index]["fields"][
-                                            "firstPublicationDate"
-                                        ]
+                                        story["fields"]["firstPublicationDate"]
                                     }
                                 />
                             ) ? (
                                 <ArticleCard
-                                    webTitle={
-                                        weather[index]["fields"]["headline"]
-                                    }
-                                    urlToImage={
-                                        weather[index]["fields"]["thumbnail"]
-                                    }
+                                    webTitle={story["fields"]["headline"]}
+                                    urlToImage={story["fields"]["thumbnail"]}
                                     publishedDate={
-                                        weather[index]["fields"][
-                                            "firstPublicationDate"
-                                        ]
+                                        story["fields"]["firstPublicationDate"]
                                     }
-                                    key={story["id"]}
                                 />
                             ) : (
                                 "Loading Content..."

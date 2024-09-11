@@ -27,38 +27,24 @@ const TenTiles = ({ url, heading }: TenTilesProps) => {
         <div className="contentContainer">
             <h1 className="contentContainer__heading">{heading}</h1>
             <div className="contentContainer__contentArticles">
-                {content.map((story, index) => {
+                {content.map((story) => {
                     return (
-                        <div>
+                        <div key={story["id"]}>
                             {content && (
                                 <ArticleCard
-                                    webTitle={
-                                        content[index]["fields"]["headline"]
-                                    }
-                                    urlToImage={
-                                        content[index]["fields"]["thumbnail"]
-                                    }
+                                    webTitle={story["fields"]["headline"]}
+                                    urlToImage={story["fields"]["thumbnail"]}
                                     publishedDate={
-                                        content[index]["fields"][
-                                            "firstPublicationDate"
-                                        ]
+                                        story["fields"]["firstPublicationDate"]
                                     }
-                                    key={story["id"]}
                                 />
                             ) ? (
                                 <ArticleCard
-                                    webTitle={
-                                        content[index]["fields"]["headline"]
-                                    }
-                                    urlToImage={
-                                        content[index]["fields"]["thumbnail"]
-                                    }
+                                    webTitle={story["fields"]["headline"]}
+                                    urlToImage={story["fields"]["thumbnail"]}
                                     publishedDate={
-                                        content[index]["fields"][
-                                            "firstPublicationDate"
-                                        ]
+                                        story["fields"]["firstPublicationDate"]
                                     }
-                                    key={story["id"]}
                                 />
                             ) : (
                                 "Loading Content..."

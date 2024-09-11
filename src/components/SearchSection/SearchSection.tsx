@@ -2,6 +2,7 @@ import "./SearchSection.scss";
 import { FormEvent, useEffect, useState } from "react";
 import ArticleCard from "../layouts/ArticleCard/ArticleCard";
 import SearchBar from "../SearchBar/SearchBar";
+import { Link, useParams } from "react-router-dom";
 
 const SearchSection = () => {
     const [content, setContent] = useState<any[]>([]);
@@ -51,7 +52,7 @@ const SearchSection = () => {
                 <div className="contentContainer__contentArticles">
                     {filteredArticles.map((story) => {
                         return (
-                            <div>
+                            <div key={story.id}>
                                 {content && (
                                     <ArticleCard
                                         webTitle={story["fields"]["headline"]}
@@ -65,18 +66,21 @@ const SearchSection = () => {
                                         }
                                     />
                                 ) ? (
-                                    <ArticleCard
-                                        webTitle={story["fields"]["headline"]}
-                                        urlToImage={
-                                            story["fields"]["thumbnail"]
-                                        }
-                                        publishedDate={
-                                            story["fields"][
-                                                "firstPublicationDate"
-                                            ]
-                                        }
-                                        key={story["id"]}
-                                    />
+                                    <Link to={"/id"}>
+                                        <ArticleCard
+                                            webTitle={
+                                                story["fields"]["headline"]
+                                            }
+                                            urlToImage={
+                                                story["fields"]["thumbnail"]
+                                            }
+                                            publishedDate={
+                                                story["fields"][
+                                                    "firstPublicationDate"
+                                                ]
+                                            }
+                                        />
+                                    </Link>
                                 ) : (
                                     "Loading Content..."
                                 )}

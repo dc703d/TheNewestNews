@@ -30,7 +30,7 @@ const Home = () => {
                 <div className="homeContainer__largeArticle">
                     {topStories.slice(0, 1).map((story) => {
                         return (
-                            <div>
+                            <div key={story["id"]}>
                                 {topStories && (
                                     <LargeArticle
                                         webTitle={story["fields"]["headline"]}
@@ -68,7 +68,7 @@ const Home = () => {
                 <div className="homeContainer__homeArticles">
                     {topStories.slice(1, 7).map((story) => {
                         return (
-                            <div>
+                            <div key={story["id"]}>
                                 {topStories && (
                                     <ArticleCard
                                         webTitle={story["fields"]["headline"]}
