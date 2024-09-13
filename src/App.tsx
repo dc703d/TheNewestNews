@@ -1,4 +1,3 @@
-//import { useState } from "react";
 import "./App.scss";
 import Nav from "./components/Nav/Nav";
 import Home from "./components/Home/Home";
@@ -6,7 +5,7 @@ import World from "./components/World/World";
 import WeatherBanner from "./components/WeatherBanner/WeatherBanner";
 import MindAndBody from "./components/MindAndBody/MindAndBody";
 import MoreToExplore from "./components/MoreToExplore/MoreToExplore";
-import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TechSection from "./components/TechSection/TechSection";
 import BusinessSection from "./components/BusinessSection/BusinessSection";
 import SportsSection from "./components/SportsSection/SportsSection";
@@ -18,8 +17,6 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import FullArticle from "./components/FullArticle/FullArticle";
 
 const App = () => {
-    //const [count, setCount] = useState(0)
-
     return (
         <BrowserRouter>
             <>
@@ -101,7 +98,7 @@ const App = () => {
                         }
                     />
                     <Route
-                        path="/:id"
+                        path="/:webTitle"
                         element={
                             <>
                                 <SearchBar />

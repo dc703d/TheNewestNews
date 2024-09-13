@@ -2,7 +2,11 @@ import "./SearchSection.scss";
 import { FormEvent, useEffect, useState } from "react";
 import ArticleCard from "../layouts/ArticleCard/ArticleCard";
 import SearchBar from "../SearchBar/SearchBar";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+// type SearchSectionProps = {
+//     content: [];
+// };
 
 const SearchSection = () => {
     const [content, setContent] = useState<any[]>([]);
@@ -35,12 +39,13 @@ const SearchSection = () => {
         const cleanInput = event.currentTarget.value;
         setSearchTermDisplay(cleanInput);
         setSearchTerm(cleanInput.toLowerCase());
-        console.log(searchTerm);
     };
 
     const filteredArticles = content.filter((article) =>
         article["fields"]["headline"].toLowerCase().includes(searchTerm)
     );
+
+    console.log("Content: ", filteredArticles);
 
     return (
         <>
@@ -52,7 +57,7 @@ const SearchSection = () => {
                 <div className="contentContainer__contentArticles">
                     {filteredArticles.map((story) => {
                         return (
-                            <div key={story.id}>
+                            <div key={story["id"]}>
                                 {content && (
                                     <ArticleCard
                                         webTitle={story["fields"]["headline"]}
@@ -66,7 +71,7 @@ const SearchSection = () => {
                                         }
                                     />
                                 ) ? (
-                                    <Link to={"/id"}>
+                                    <Link to={`/${story.sectionId}`}>
                                         <ArticleCard
                                             webTitle={
                                                 story["fields"]["headline"]

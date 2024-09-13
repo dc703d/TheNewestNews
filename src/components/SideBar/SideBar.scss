@@ -1,0 +1,16 @@
+.sidebarContainer {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    // margin-top: 200px;
+    background-color: #dfe2e5;
+    &__heading {
+        margin-left: 10px;
+    }
+    &__article {
+        justify-content: center;
+        background-color: white;
+        margin-top: 40px;
+    }
+}

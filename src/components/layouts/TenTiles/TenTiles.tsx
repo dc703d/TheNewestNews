@@ -39,13 +39,19 @@ const TenTiles = ({ url, heading }: TenTilesProps) => {
                                     }
                                 />
                             ) ? (
-                                <ArticleCard
-                                    webTitle={story["fields"]["headline"]}
-                                    urlToImage={story["fields"]["thumbnail"]}
-                                    publishedDate={
-                                        story["fields"]["firstPublicationDate"]
-                                    }
-                                />
+                                <div className="contentContainer__article">
+                                    <ArticleCard
+                                        webTitle={story["fields"]["headline"]}
+                                        urlToImage={
+                                            story["fields"]["thumbnail"]
+                                        }
+                                        publishedDate={
+                                            story["fields"][
+                                                "firstPublicationDate"
+                                            ]
+                                        }
+                                    />
+                                </div>
                             ) : (
                                 "Loading Content..."
                             )}
