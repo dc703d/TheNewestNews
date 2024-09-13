@@ -1,5 +1,4 @@
 .bannerContainer {
-    background-color: #e5e7eb;
     padding: 20px 50px;
     &__heading {
         margin-left: 15px;
@@ -12,4 +11,13 @@
     &__article {
         margin: 8px;
     }
+}
+.bannerContainer--mint {
+    background-color: #e6f7f2;
+}
+.bannerContainer--grey {
+    background-color: #e5e7eb;
+}
+.bannerContainer--yellow {
+    background-color: #ede9dc;
 }

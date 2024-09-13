@@ -6,9 +6,10 @@ import { Link, useParams } from "react-router-dom";
 type BannerProps = {
     url: string;
     heading?: string;
+    colour: string;
 };
 
-const Banner = ({ url, heading }: BannerProps) => {
+const Banner = ({ url, heading, colour }: BannerProps) => {
     const [weather, setWeather] = useState<any[]>([]);
 
     const getWeather = () => {
@@ -25,7 +26,7 @@ const Banner = ({ url, heading }: BannerProps) => {
     }, []);
 
     return (
-        <div className="bannerContainer">
+        <div className={`bannerContainer bannerContainer--${colour}`}>
             <h1 className="bannerContainer__heading">{heading}</h1>
             <div className="bannerContainer__homeArticles">
                 {weather.map((story) => {

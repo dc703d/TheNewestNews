@@ -15,6 +15,9 @@ import EntertainmentSection from "./components/EntertainmentSection/Entertainmen
 import SearchSection from "./components/SearchSection/SearchSection";
 import SearchBar from "./components/SearchBar/SearchBar";
 import FullArticle from "./components/FullArticle/FullArticle";
+import Footer from "./components/Footer/Footer";
+import Politics from "./components/Politics/Politics";
+import Archives from "./components/Archives/Archives";
 
 const App = () => {
     return (
@@ -32,6 +35,8 @@ const App = () => {
                                 <World />
                                 <MindAndBody />
                                 <MoreToExplore />
+                                <Politics />
+                                <Archives />
                             </>
                         }
                     />
@@ -107,6 +112,7 @@ const App = () => {
                         }
                     />
                 </Routes>
+                <Footer />
             </>
         </BrowserRouter>
     );
