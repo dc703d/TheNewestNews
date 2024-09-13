@@ -6,14 +6,14 @@
     }
 }
 
-@mixin med-phone {
-    @media screen and (min-width: ($xxs+1)) and (max-width: ($xxs)) {
+@mixin small-tablet {
+    @media screen and (min-width: ($xxxs + 1px)) and (max-width: ($xxs)) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media screen and (min-width: ($xxs+1)) and (max-width: ($xs)) {
+    @media screen and (min-width: ($xxs + 1px)) and (max-width: ($xs)) {
         @content;
     }
 }

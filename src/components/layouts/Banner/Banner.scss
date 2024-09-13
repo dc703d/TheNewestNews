@@ -43,6 +43,9 @@
 }
 
 .bannerContainer {
+    @include media.small-tablet {
+        display: none;
+    }
     @include media.tablet {
         display: none;
     }
@@ -51,6 +54,9 @@
     }
 }
 .bannerContainerLess {
+    @include media.small-tablet {
+        display: block;
+    }
     @include media.tablet {
         display: block;
     }

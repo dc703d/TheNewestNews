@@ -1,0 +1,35 @@
+@import "../../assets/variables.scss";
+.hamburger {
+    background-image: $PrimaryBackgroundColor;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0;
+    z-index: 2;
+
+    &__list {
+        height: 100vw;
+        width: 100vw;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &--item {
+            font-size: 1rem;
+            text-decoration: none;
+            color: white;
+            padding: 20px;
+        }
+    }
+
+    &__cross {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

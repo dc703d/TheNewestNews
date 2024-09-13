@@ -23,6 +23,18 @@
 }
 
 .card {
+    @include media.small-tablet {
+        width: 140px;
+        height: 180px;
+        &__heading {
+            font-size: 11px;
+            margin: 0px 6px;
+        }
+        &__date {
+            font-size: 10px;
+            text-align: right;
+        }
+    }
     @include media.tablet {
         width: 190px;
         height: 215px;

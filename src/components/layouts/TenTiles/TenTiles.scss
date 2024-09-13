@@ -38,6 +38,9 @@
 }
 
 .contentContainer {
+    @include media.small-tablet {
+        display: none;
+    }
     @include media.tablet {
         display: none;
     }
@@ -47,6 +50,13 @@
 }
 
 .contentContainerLess {
+    @include media.small-tablet {
+        display: block;
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
     @include media.tablet {
         display: block;
         &__content {
