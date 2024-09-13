@@ -38,6 +38,15 @@
 }
 
 .contentContainer {
+    @include media.small-phone {
+        display: none;
+    }
+    @include media.phone {
+        display: none;
+    }
+    @include media.kindle {
+        display: none;
+    }
     @include media.small-tablet {
         display: none;
     }
@@ -50,6 +59,29 @@
 }
 
 .contentContainerLess {
+    @include media.small-phone {
+        padding: 20px;
+        display: block;
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @include media.phone {
+        padding: 20px;
+        display: block;
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @include media.kindle {
+        display: block;
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
     @include media.small-tablet {
         display: block;
         &__content {

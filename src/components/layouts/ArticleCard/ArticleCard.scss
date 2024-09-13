@@ -23,6 +23,42 @@
 }
 
 .card {
+    @include media.small-phone {
+        width: 120px;
+        height: 170px;
+        &__heading {
+            font-size: 8px;
+            margin: 0px 4px;
+        }
+        &__date {
+            font-size: 7px;
+            text-align: right;
+        }
+    }
+    @include media.phone {
+        width: 120px;
+        height: 170px;
+        &__heading {
+            font-size: 8px;
+            margin: 0px 4px;
+        }
+        &__date {
+            font-size: 7px;
+            text-align: right;
+        }
+    }
+    @include media.kindle {
+        width: 120px;
+        height: 170px;
+        &__heading {
+            font-size: 8px;
+            margin: 0px 4px;
+        }
+        &__date {
+            font-size: 7px;
+            text-align: right;
+        }
+    }
     @include media.small-tablet {
         width: 140px;
         height: 180px;

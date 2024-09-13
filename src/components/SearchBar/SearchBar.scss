@@ -1,3 +1,5 @@
+@use "../../mediaquery/media.scss";
+@use "../../mediaquery/devices.scss";
 @import "../../assets/variables.scss";
 .searchbar {
     display: flex;
@@ -21,5 +23,26 @@
     }
     &__input:hover {
         transform: scaleX(1.01);
+    }
+
+    @include media.small-phone {
+        font-weight: 400;
+        &__input {
+            width: 150px;
+            height: 20px;
+        }
+    }
+    @include media.phone {
+        font-weight: 400;
+        &__input {
+            width: 150px;
+            height: 20px;
+        }
+    }
+
+    @include media.kindle {
+        &__input {
+            width: 250px;
+        }
     }
 }

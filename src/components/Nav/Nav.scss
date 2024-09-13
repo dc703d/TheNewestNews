@@ -48,6 +48,38 @@
 }
 
 .navigation {
+    @include media.small-phone {
+        &__list {
+            display: none;
+        }
+        &__item {
+            display: block;
+        }
+        &__logo {
+            width: 80px;
+            margin: 5px 0px 0px 10px;
+        }
+    }
+    @include media.phone {
+        &__list {
+            display: none;
+        }
+        &__item {
+            display: block;
+        }
+        &__logo {
+            width: 80px;
+            margin: 5px 0px 0px 10px;
+        }
+    }
+    @include media.kindle {
+        &__list {
+            display: none;
+        }
+        &__item {
+            display: block;
+        }
+    }
     @include media.small-tablet {
         &__list {
             display: none;

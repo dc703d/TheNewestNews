@@ -1,7 +1,19 @@
 @import "./devices.scss";
 
 @mixin small-phone {
-    @media screen and (max-width: ($xxs)) {
+    @media screen and (max-width: ($xxxxxxs)) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (min-width: ($xxxxxxs + 1px)) and (max-width: ($xxxxxs)) {
+        @content;
+    }
+}
+
+@mixin kindle {
+    @media screen and (min-width: ($xxxxs + 1px)) and (max-width: ($xxxs)) {
         @content;
     }
 }

@@ -23,6 +23,48 @@
 }
 
 .largeCard {
+    @include media.small-phone {
+        width: 250px;
+        &__heading {
+            font-size: 18px;
+        }
+        &__date {
+            font-size: 12px;
+            text-align: right;
+        }
+        &__byline {
+            font-size: 12px;
+            margin: 0px;
+        }
+    }
+    @include media.phone {
+        width: 250px;
+        &__heading {
+            font-size: 18px;
+        }
+        &__date {
+            font-size: 12px;
+            text-align: right;
+        }
+        &__byline {
+            font-size: 12px;
+            margin: 0px;
+        }
+    }
+    @include media.kindle {
+        width: 250px;
+        &__heading {
+            font-size: 18px;
+        }
+        &__date {
+            font-size: 12px;
+            text-align: right;
+        }
+        &__byline {
+            font-size: 12px;
+            margin: 0px;
+        }
+    }
     @include media.small-tablet {
         width: 280px;
         &__heading {
