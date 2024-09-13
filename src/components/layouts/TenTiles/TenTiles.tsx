@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import "./TenTiles.scss";
+import { Link } from "react-router-dom";
 
 type TenTilesProps = {
     url: string;
@@ -40,17 +41,24 @@ const TenTiles = ({ url, heading }: TenTilesProps) => {
                                 />
                             ) ? (
                                 <div className="contentContainer__article">
-                                    <ArticleCard
-                                        webTitle={story["fields"]["headline"]}
-                                        urlToImage={
-                                            story["fields"]["thumbnail"]
-                                        }
-                                        publishedDate={
-                                            story["fields"][
-                                                "firstPublicationDate"
-                                            ]
-                                        }
-                                    />
+                                    <Link
+                                        to={`/${story.webTitle}`}
+                                        state={{ story }}
+                                    >
+                                        <ArticleCard
+                                            webTitle={
+                                                story["fields"]["headline"]
+                                            }
+                                            urlToImage={
+                                                story["fields"]["thumbnail"]
+                                            }
+                                            publishedDate={
+                                                story["fields"][
+                                                    "firstPublicationDate"
+                                                ]
+                                            }
+                                        />
+                                    </Link>
                                 </div>
                             ) : (
                                 "Loading Content..."

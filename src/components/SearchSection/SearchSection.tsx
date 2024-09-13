@@ -24,7 +24,6 @@ const SearchSection = () => {
         let pages2 = pages[1];
         let pages3 = pages[2];
         let allPages = pages1.concat(pages2, pages3);
-        console.log(allPages);
         setContent(allPages);
     };
 
@@ -44,8 +43,6 @@ const SearchSection = () => {
     const filteredArticles = content.filter((article) =>
         article["fields"]["headline"].toLowerCase().includes(searchTerm)
     );
-
-    console.log("Content: ", filteredArticles);
 
     return (
         <>
@@ -71,21 +68,26 @@ const SearchSection = () => {
                                         }
                                     />
                                 ) ? (
-                                    <Link to={`/${story.sectionId}`}>
-                                        <ArticleCard
-                                            webTitle={
-                                                story["fields"]["headline"]
-                                            }
-                                            urlToImage={
-                                                story["fields"]["thumbnail"]
-                                            }
-                                            publishedDate={
-                                                story["fields"][
-                                                    "firstPublicationDate"
-                                                ]
-                                            }
-                                        />
-                                    </Link>
+                                    <div className="contentContainer__article">
+                                        <Link
+                                            to={`/${story.webTitle}`}
+                                            state={{ story }}
+                                        >
+                                            <ArticleCard
+                                                webTitle={
+                                                    story["fields"]["headline"]
+                                                }
+                                                urlToImage={
+                                                    story["fields"]["thumbnail"]
+                                                }
+                                                publishedDate={
+                                                    story["fields"][
+                                                        "firstPublicationDate"
+                                                    ]
+                                                }
+                                            />
+                                        </Link>
+                                    </div>
                                 ) : (
                                     "Loading Content..."
                                 )}

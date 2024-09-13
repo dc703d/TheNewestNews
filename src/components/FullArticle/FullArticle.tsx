@@ -21,6 +21,8 @@ const FullArticle = () => {
         body,
     } = fields || {};
 
+    console.log({ story });
+
     return (
         <div className="fullArticle">
             <div className="fullArticle__textSection">

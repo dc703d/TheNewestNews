@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import LargeArticle from "../LargeArticle/LargeArticle";
 import "./LargeArticleTiles.scss";
+import { Link } from "react-router-dom";
 
 type LargeArticleTilesProps = {
     url: string;
@@ -50,19 +51,28 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                                         key={story.id}
                                     />
                                 ) ? (
-                                    <LargeArticle
-                                        webTitle={story["fields"]["headline"]}
-                                        urlToImage={
-                                            story["fields"]["thumbnail"]
-                                        }
-                                        publishedDate={
-                                            story["fields"][
-                                                "firstPublicationDate"
-                                            ]
-                                        }
-                                        trailText={story["fields"]["trailText"]}
-                                        key={story.id}
-                                    />
+                                    <Link
+                                        to={`/${story.webTitle}`}
+                                        state={{ story }}
+                                    >
+                                        <LargeArticle
+                                            webTitle={
+                                                story["fields"]["headline"]
+                                            }
+                                            urlToImage={
+                                                story["fields"]["thumbnail"]
+                                            }
+                                            publishedDate={
+                                                story["fields"][
+                                                    "firstPublicationDate"
+                                                ]
+                                            }
+                                            trailText={
+                                                story["fields"]["trailText"]
+                                            }
+                                            key={story.id}
+                                        />
+                                    </Link>
                                 ) : (
                                     "Loading Content..."
                                 )}
@@ -89,18 +99,25 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                                         key={story.id}
                                     />
                                 ) ? (
-                                    <ArticleCard
-                                        webTitle={story["fields"]["headline"]}
-                                        urlToImage={
-                                            story["fields"]["thumbnail"]
-                                        }
-                                        publishedDate={
-                                            story["fields"][
-                                                "firstPublicationDate"
-                                            ]
-                                        }
-                                        key={story.id}
-                                    />
+                                    <Link
+                                        to={`/${story.webTitle}`}
+                                        state={{ story }}
+                                    >
+                                        <ArticleCard
+                                            webTitle={
+                                                story["fields"]["headline"]
+                                            }
+                                            urlToImage={
+                                                story["fields"]["thumbnail"]
+                                            }
+                                            publishedDate={
+                                                story["fields"][
+                                                    "firstPublicationDate"
+                                                ]
+                                            }
+                                            key={story.id}
+                                        />
+                                    </Link>
                                 ) : (
                                     "Loading Content..."
                                 )}
