@@ -1,3 +1,7 @@
+@use "../../../mediaquery/media.scss";
+@use "../../../mediaquery/devices.scss";
+@import "../../../assets/variables.scss";
+
 .bannerContainer {
     padding: 20px 50px;
     &__heading {
@@ -5,19 +9,52 @@
     }
     &__homeArticles {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
     }
     &__article {
         margin: 8px;
+        grid-area: "article";
     }
 }
+.bannerContainerLess {
+    display: none;
+    padding: 20px 50px;
+    &__heading {
+        margin-left: 15px;
+    }
+    &__homeArticles {
+        display: flex;
+        justify-content: center;
+    }
+    &__article {
+        margin: 8px;
+        grid-area: "article";
+    }
+}
+
 .bannerContainer--mint {
-    background-color: #e6f7f2;
+    background-image: $MintBannerColor;
 }
 .bannerContainer--grey {
-    background-color: #e5e7eb;
+    background-image: $GreyBannerColor;
 }
 .bannerContainer--yellow {
-    background-color: #ede9dc;
+    background-image: $YellowBannerColor;
+}
+
+.bannerContainer {
+    @include media.tablet {
+        display: none;
+    }
+    @include media.small-laptop {
+        display: none;
+    }
+}
+.bannerContainerLess {
+    @include media.tablet {
+        display: block;
+    }
+    @include media.small-laptop {
+        display: block;
+    }
 }

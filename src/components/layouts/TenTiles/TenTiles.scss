@@ -1,3 +1,5 @@
+@use "../../../mediaquery/media.scss";
+@use "../../../mediaquery/devices.scss";
 .contentContainer {
     padding: 50px;
     &__heading {
@@ -13,5 +15,50 @@
     }
     &__article {
         margin: 8px;
+    }
+}
+
+.contentContainerLess {
+    display: none;
+    padding: 50px;
+    &__heading {
+        margin-left: 10px;
+    }
+    &__content {
+        display: flex;
+    }
+    &__contentArticles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &__article {
+        margin: 8px;
+    }
+}
+
+.contentContainer {
+    @include media.tablet {
+        display: none;
+    }
+    @include media.small-laptop {
+        display: none;
+    }
+}
+
+.contentContainerLess {
+    @include media.tablet {
+        display: block;
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    @include media.small-laptop {
+        display: block;
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 }

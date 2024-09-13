@@ -4,18 +4,14 @@ import ArticleCard from "../layouts/ArticleCard/ArticleCard";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
 
-// type SearchSectionProps = {
-//     content: [];
-// };
-
 const SearchSection = () => {
     const [content, setContent] = useState<any[]>([]);
 
     const getContent = async () => {
         let pages: string | any[] = [];
-        for (let i = 1; i <= 3; i++) {
+        for (let i = 1; i <= 6; i++) {
             const response = await fetch(
-                `https://content.guardianapis.com/search?page=${i}&show-fields=all&api-key=3bdabd26-081c-4be3-acfa-e73952c73518`
+                `https://content.guardianapis.com/search?page=${i}&page-size=50&show-fields=all&api-key=3bdabd26-081c-4be3-acfa-e73952c73518`
             );
             const data = await response.json();
             pages.push(data["response"]["results"]);
@@ -23,8 +19,14 @@ const SearchSection = () => {
         let pages1 = pages[0];
         let pages2 = pages[1];
         let pages3 = pages[2];
-        let allPages = pages1.concat(pages2, pages3);
+        let pages4 = pages[3];
+        let pages5 = pages[4];
+        let pages6 = pages[5];
+        let allPages1 = pages1.concat(pages2, pages3);
+        let allPages2 = pages4.concat(pages5, pages6);
+        let allPages = allPages1.concat(allPages2);
         setContent(allPages);
+        console.log(allPages);
     };
 
     useEffect(() => {

@@ -1,9 +1,10 @@
+@import "../../assets/variables.scss";
 .footer {
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 90px;
-    background-color: #003366;
+    background-image: $PrimaryBackgroundColor;
     color: white;
     padding: 5px 0px;
     &__heading {

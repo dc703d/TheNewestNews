@@ -1,10 +1,11 @@
+@import "../../assets/variables.scss";
 .searchbar {
     display: flex;
     justify-content: right;
     align-items: start;
     width: 100%;
     height: 40px;
-    background-color: #003366;
+    background-image: $PrimaryBackgroundColor;
     color: white;
     padding: 5px 0px;
     font-weight: 600;
@@ -14,7 +15,8 @@
         height: 25px;
         width: 400px;
         border: 2px solid white;
-        background-color: #003366;
+        background-color: transparent;
+
         border-radius: 10px;
     }
     &__input:hover {

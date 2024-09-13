@@ -1,3 +1,5 @@
+@use "../../../mediaquery/media.scss";
+@use "../../../mediaquery/devices.scss";
 .largeCard {
     margin-right: 8px;
     width: 516px;
@@ -8,7 +10,6 @@
         font-size: 24px;
     }
     &__image {
-        width: 516px;
         padding-bottom: 0px;
     }
     &__date {
@@ -18,5 +19,94 @@
     &__byline {
         font-size: 12px;
         margin: 0px;
+    }
+}
+
+.largeCard {
+    @include media.tablet {
+        width: 350px;
+        &__heading {
+            font-size: 28px;
+        }
+        &__date {
+            font-size: 16px;
+            text-align: right;
+        }
+        &__byline {
+            font-size: 16px;
+            margin: 0px;
+        }
+    }
+
+    @include media.small-laptop {
+        width: 400px;
+        &__heading {
+            font-size: 28px;
+        }
+        &__date {
+            font-size: 16px;
+            text-align: right;
+        }
+        &__byline {
+            font-size: 16px;
+            margin: 0px;
+        }
+    }
+    @include media.laptop {
+        width: 440px;
+        &__heading {
+            font-size: 28px;
+        }
+        &__date {
+            font-size: 16px;
+            text-align: right;
+        }
+        &__byline {
+            font-size: 16px;
+            margin: 0px;
+        }
+    }
+
+    @include media.desktop {
+        width: 550px;
+        &__heading {
+            font-size: 28px;
+        }
+        &__date {
+            font-size: 16px;
+            text-align: right;
+        }
+        &__byline {
+            font-size: 16px;
+            margin: 0px;
+        }
+    }
+    @include media.large-screen {
+        width: 622px;
+        &__heading {
+            font-size: 30px;
+        }
+        &__date {
+            font-size: 18px;
+            text-align: right;
+        }
+        &__byline {
+            font-size: 18px;
+            margin: 0px;
+        }
+    }
+    @include media.xlarge-screen {
+        width: 750px;
+        &__heading {
+            font-size: 34px;
+        }
+        &__date {
+            font-size: 20px;
+            text-align: right;
+        }
+        &__byline {
+            font-size: 20px;
+            margin: 0px;
+        }
     }
 }

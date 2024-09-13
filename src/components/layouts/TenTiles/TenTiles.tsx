@@ -25,49 +25,104 @@ const TenTiles = ({ url, heading }: TenTilesProps) => {
     }, []);
 
     return (
-        <div className="contentContainer">
-            <h1 className="contentContainer__heading">{heading}</h1>
-            <div className="contentContainer__contentArticles">
-                {content.map((story) => {
-                    return (
-                        <div key={story["id"]}>
-                            {content && (
-                                <ArticleCard
-                                    webTitle={story["fields"]["headline"]}
-                                    urlToImage={story["fields"]["thumbnail"]}
-                                    publishedDate={
-                                        story["fields"]["firstPublicationDate"]
-                                    }
-                                />
-                            ) ? (
-                                <div className="contentContainer__article">
-                                    <Link
-                                        to={`/${story.webTitle}`}
-                                        state={{ story }}
-                                    >
-                                        <ArticleCard
-                                            webTitle={
-                                                story["fields"]["headline"]
-                                            }
-                                            urlToImage={
-                                                story["fields"]["thumbnail"]
-                                            }
-                                            publishedDate={
-                                                story["fields"][
-                                                    "firstPublicationDate"
-                                                ]
-                                            }
-                                        />
-                                    </Link>
-                                </div>
-                            ) : (
-                                "Loading Content..."
-                            )}
-                        </div>
-                    );
-                })}
+        <>
+            <div className="contentContainer">
+                <h1 className="contentContainer__heading">{heading}</h1>
+                <div className="contentContainer__contentArticles">
+                    {content.map((story) => {
+                        return (
+                            <div key={story["id"]}>
+                                {content && (
+                                    <ArticleCard
+                                        webTitle={story["fields"]["headline"]}
+                                        urlToImage={
+                                            story["fields"]["thumbnail"]
+                                        }
+                                        publishedDate={
+                                            story["fields"][
+                                                "firstPublicationDate"
+                                            ]
+                                        }
+                                    />
+                                ) ? (
+                                    <div className="contentContainer__article">
+                                        <Link
+                                            to={`/${story.webTitle}`}
+                                            state={{ story }}
+                                        >
+                                            <ArticleCard
+                                                webTitle={
+                                                    story["fields"]["headline"]
+                                                }
+                                                urlToImage={
+                                                    story["fields"]["thumbnail"]
+                                                }
+                                                publishedDate={
+                                                    story["fields"][
+                                                        "firstPublicationDate"
+                                                    ]
+                                                }
+                                            />
+                                        </Link>
+                                    </div>
+                                ) : (
+                                    "Loading Content..."
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
-        </div>
+            {/* /////////////// */}
+
+            <div className="contentContainerLess">
+                <h1 className="contentContainerLess__heading">{heading}</h1>
+                <div className="contentContainerLess__contentArticles">
+                    {content.slice(0, 8).map((story) => {
+                        return (
+                            <div key={story["id"]}>
+                                {content && (
+                                    <ArticleCard
+                                        webTitle={story["fields"]["headline"]}
+                                        urlToImage={
+                                            story["fields"]["thumbnail"]
+                                        }
+                                        publishedDate={
+                                            story["fields"][
+                                                "firstPublicationDate"
+                                            ]
+                                        }
+                                    />
+                                ) ? (
+                                    <div className="contentContainerLess__article">
+                                        <Link
+                                            to={`/${story.webTitle}`}
+                                            state={{ story }}
+                                        >
+                                            <ArticleCard
+                                                webTitle={
+                                                    story["fields"]["headline"]
+                                                }
+                                                urlToImage={
+                                                    story["fields"]["thumbnail"]
+                                                }
+                                                publishedDate={
+                                                    story["fields"][
+                                                        "firstPublicationDate"
+                                                    ]
+                                                }
+                                            />
+                                        </Link>
+                                    </div>
+                                ) : (
+                                    "Loading Content..."
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </>
     );
 };
 

@@ -17,7 +17,7 @@ const Banner = ({ url, heading, colour }: BannerProps) => {
             .then((res) => {
                 return res.json();
             })
-            .then((data) => setWeather(data["response"]["results"].slice(0, 5)))
+            .then((data) => setWeather(data["response"]["results"]))
             .catch((err) => console.log(err));
     };
 
@@ -26,49 +26,104 @@ const Banner = ({ url, heading, colour }: BannerProps) => {
     }, []);
 
     return (
-        <div className={`bannerContainer bannerContainer--${colour}`}>
-            <h1 className="bannerContainer__heading">{heading}</h1>
-            <div className="bannerContainer__homeArticles">
-                {weather.map((story) => {
-                    return (
-                        <div key={story.id}>
-                            {weather && (
-                                <ArticleCard
-                                    webTitle={story["fields"]["headline"]}
-                                    urlToImage={story["fields"]["thumbnail"]}
-                                    publishedDate={
-                                        story["fields"]["firstPublicationDate"]
-                                    }
-                                />
-                            ) ? (
-                                <Link
-                                    to={`/${story.webTitle}`}
-                                    state={{ story }}
-                                >
-                                    <div className="bannerContainer__article">
-                                        <ArticleCard
-                                            webTitle={
-                                                story["fields"]["headline"]
-                                            }
-                                            urlToImage={
-                                                story["fields"]["thumbnail"]
-                                            }
-                                            publishedDate={
-                                                story["fields"][
-                                                    "firstPublicationDate"
-                                                ]
-                                            }
-                                        />
-                                    </div>
-                                </Link>
-                            ) : (
-                                "Loading Content..."
-                            )}
-                        </div>
-                    );
-                })}
+        <>
+            <div className={`bannerContainer bannerContainer--${colour}`}>
+                <h1 className="bannerContainer__heading">{heading}</h1>
+                <div className="bannerContainer__homeArticles">
+                    {weather.slice(0, 5).map((story) => {
+                        return (
+                            <div key={story.id}>
+                                {weather && (
+                                    <ArticleCard
+                                        webTitle={story["fields"]["headline"]}
+                                        urlToImage={
+                                            story["fields"]["thumbnail"]
+                                        }
+                                        publishedDate={
+                                            story["fields"][
+                                                "firstPublicationDate"
+                                            ]
+                                        }
+                                    />
+                                ) ? (
+                                    <Link
+                                        to={`/${story.webTitle}`}
+                                        state={{ story }}
+                                    >
+                                        <div className="bannerContainer__article">
+                                            <ArticleCard
+                                                webTitle={
+                                                    story["fields"]["headline"]
+                                                }
+                                                urlToImage={
+                                                    story["fields"]["thumbnail"]
+                                                }
+                                                publishedDate={
+                                                    story["fields"][
+                                                        "firstPublicationDate"
+                                                    ]
+                                                }
+                                            />
+                                        </div>
+                                    </Link>
+                                ) : (
+                                    "Loading Content..."
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
-        </div>
+            {/* //////// add less cards */}
+
+            <div className={`bannerContainerLess bannerContainer--${colour}`}>
+                <h1 className="bannerContainerLess__heading">{heading}</h1>
+                <div className="bannerContainerLess__homeArticles">
+                    {weather.slice(0, 4).map((story) => {
+                        return (
+                            <div key={story.id}>
+                                {weather && (
+                                    <ArticleCard
+                                        webTitle={story["fields"]["headline"]}
+                                        urlToImage={
+                                            story["fields"]["thumbnail"]
+                                        }
+                                        publishedDate={
+                                            story["fields"][
+                                                "firstPublicationDate"
+                                            ]
+                                        }
+                                    />
+                                ) ? (
+                                    <Link
+                                        to={`/${story.webTitle}`}
+                                        state={{ story }}
+                                    >
+                                        <div className="bannerContainerLess__article">
+                                            <ArticleCard
+                                                webTitle={
+                                                    story["fields"]["headline"]
+                                                }
+                                                urlToImage={
+                                                    story["fields"]["thumbnail"]
+                                                }
+                                                publishedDate={
+                                                    story["fields"][
+                                                        "firstPublicationDate"
+                                                    ]
+                                                }
+                                            />
+                                        </div>
+                                    </Link>
+                                ) : (
+                                    "Loading Content..."
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </>
     );
 };
 
