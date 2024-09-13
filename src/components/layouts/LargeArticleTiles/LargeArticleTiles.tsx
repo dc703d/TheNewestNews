@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import LargeArticle from "../LargeArticle/LargeArticle";
+import "./LargeArticleTiles.scss";
 
 type LargeArticleTilesProps = {
     url: string;
@@ -27,10 +28,10 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
     }, []);
 
     return (
-        <div className="techContainer">
+        <div className="articleContainer">
             <h1>{heading}</h1>
-            <div className="techContainer__content">
-                <div className="techContainer__largeArticle">
+            <div className="articleContainer__content">
+                <div className="articleContainer__largeArticle">
                     {topStories.slice(0, 1).map((story) => {
                         return (
                             <div key={story.id}>
@@ -70,7 +71,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                     })}
                 </div>
 
-                <div className="techContainer__homeArticles">
+                <div className="articleContainer__homeArticles">
                     {topStories.slice(1, 7).map((story) => {
                         return (
                             <div key={story.id}>

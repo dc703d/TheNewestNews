@@ -1,0 +1,13 @@
+.articleContainer {
+    padding: 50px;
+    &__content {
+        display: flex;
+        justify-content: center;
+    }
+    &__homeArticles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+}
