@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import "./Banner.scss";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type BannerProps = {
     url: string;

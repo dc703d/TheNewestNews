@@ -9,7 +9,7 @@ type SideBarProps = {
     id: string;
 };
 
-const SideBar = ({ url, heading, id }: SideBarProps) => {
+const SideBar = ({ url, id }: SideBarProps) => {
     const [content, setContent] = useState<any[]>([]);
 
     const getContent = () => {

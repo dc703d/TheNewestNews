@@ -11,7 +11,6 @@ type LargeArticleTilesProps = {
 
 const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
     const [topStories, setTopStories] = useState<any[]>([]);
-    const [isVisible, setIsVisible] = useState(true);
 
     const getTopStories = () => {
         fetch(url)

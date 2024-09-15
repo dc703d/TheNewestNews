@@ -1,4 +1,3 @@
-import SearchBar from "../SearchBar/SearchBar";
 import "./Nav.scss";
 import { Link } from "react-router-dom";
 import tnn_logo from "../../assets/tnn_logo.webp";

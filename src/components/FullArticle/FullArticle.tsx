@@ -2,10 +2,6 @@ import { useLocation, useParams } from "react-router-dom";
 import "./FullArticle.scss";
 import SideBar from "../SideBar/SideBar";
 
-type FullArticleProps = {
-    content: [];
-};
-
 const FullArticle = () => {
     const { webTitle } = useParams();
     const location = useLocation();
@@ -15,13 +11,13 @@ const FullArticle = () => {
         headline,
         trailText,
         byline,
-        bodyText,
         firstPublicationDate,
         thumbnail,
         body,
     } = fields || {};
 
     console.log({ story });
+    console.log(webTitle);
 
     return (
         <div className="fullArticle">

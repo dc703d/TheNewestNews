@@ -1,6 +1,4 @@
 import "./Footer.scss";
-import { Link } from "react-router-dom";
-import tnn_logo from "../../assets/tnn_logo.webp";
 
 const Footer = () => {
     return (
