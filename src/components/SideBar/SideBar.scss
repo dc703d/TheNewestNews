@@ -1,3 +1,5 @@
+@use "../../mediaquery/media.scss";
+@use "../../mediaquery/devices.scss";
 .sidebarContainer {
     padding: 50px;
     display: flex;
@@ -12,5 +14,122 @@
         justify-content: center;
         background-color: white;
         margin-top: 40px;
+    }
+}
+
+@include media.small-phone {
+    .sidebarContainer {
+        padding: 20px;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background-color: #dfe2e5;
+        &__heading {
+            font-size: 20px;
+        }
+        &__sidebarArticles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__article {
+            background-color: white;
+            margin-top: 20px;
+            width: fit-content;
+        }
+    }
+}
+@include media.phone {
+    .sidebarContainer {
+        padding: 20px;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background-color: #dfe2e5;
+        &__heading {
+            font-size: 20px;
+        }
+        &__sidebarArticles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: auto;
+            gap: 20px;
+        }
+        &__article {
+            background-color: white;
+            margin-top: 20px;
+            width: fit-content;
+        }
+    }
+}
+@include media.large-phone {
+    .sidebarContainer {
+        padding: 20px;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background-color: #dfe2e5;
+        &__heading {
+            font-size: 20px;
+        }
+        &__sidebarArticles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: auto;
+            gap: 20px;
+        }
+        &__article {
+            background-color: white;
+            margin-top: 20px;
+            width: fit-content;
+        }
+    }
+}
+@include media.kindle {
+    .sidebarContainer {
+        padding: 20px;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background-color: #dfe2e5;
+        &__heading {
+            font-size: 20px;
+        }
+        &__sidebarArticles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: auto;
+            gap: 20px;
+        }
+        &__article {
+            background-color: white;
+            margin-top: 20px;
+            width: fit-content;
+            transform: scale(1.1);
+        }
+    }
+}
+
+@include media.small-tablet {
+    .sidebarContainer {
+        padding: 20px;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background-color: #dfe2e5;
+        &__heading {
+            font-size: 20px;
+        }
+        &__sidebarArticles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin: auto;
+            gap: 40px;
+        }
+        &__article {
+            background-color: white;
+            margin-top: 20px;
+            width: fit-content;
+            transform: scale(1.1);
+        }
     }
 }

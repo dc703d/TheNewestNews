@@ -1,3 +1,5 @@
+@use "../../mediaquery/media.scss";
+@use "../../mediaquery/devices.scss";
 .fullArticle {
     display: flex;
     &__textSection {
@@ -31,5 +33,147 @@
     &__sidebar {
         display: flex;
         flex-direction: column;
+    }
+}
+
+@include media.small-phone {
+    .fullArticle {
+        flex-direction: column;
+        &__textSection {
+            margin: 20px;
+            width: 90%;
+
+            &--heading {
+                font-size: 24px;
+            }
+            &--tagline {
+                font-size: 12px;
+            }
+            &--date {
+                font-size: 12px;
+            }
+            &--author {
+                font-size: 12px;
+                padding-bottom: 30px;
+            }
+        }
+        &__sidebar {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+    }
+}
+@include media.phone {
+    .fullArticle {
+        flex-direction: column;
+        &__textSection {
+            margin: 20px;
+            width: 90%;
+
+            &--heading {
+                font-size: 26px;
+            }
+            &--tagline {
+                font-size: 12px;
+            }
+            &--date {
+                font-size: 12px;
+            }
+            &--author {
+                font-size: 12px;
+                padding-bottom: 30px;
+            }
+        }
+        &__sidebar {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+    }
+}
+@include media.large-phone {
+    .fullArticle {
+        flex-direction: column;
+        &__textSection {
+            margin: 20px;
+            width: 90%;
+
+            &--heading {
+                font-size: 24px;
+            }
+            &--tagline {
+                font-size: 12px;
+            }
+            &--date {
+                font-size: 12px;
+            }
+            &--author {
+                font-size: 12px;
+                padding-bottom: 30px;
+            }
+        }
+        &__sidebar {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+    }
+}
+@include media.kindle {
+    .fullArticle {
+        flex-direction: column;
+        &__textSection {
+            margin: 20px;
+            width: 90%;
+
+            &--heading {
+                font-size: 24px;
+            }
+            &--tagline {
+                font-size: 12px;
+            }
+            &--date {
+                font-size: 12px;
+            }
+            &--author {
+                font-size: 12px;
+                padding-bottom: 30px;
+            }
+        }
+        &__sidebar {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+    }
+}
+
+@include media.small-tablet {
+    .fullArticle {
+        flex-direction: column;
+        &__textSection {
+            margin: 20px;
+            width: 90%;
+
+            &--heading {
+                font-size: 24px;
+            }
+            &--tagline {
+                font-size: 12px;
+            }
+            &--date {
+                font-size: 12px;
+            }
+            &--author {
+                font-size: 12px;
+                padding-bottom: 30px;
+            }
+        }
+        &__sidebar {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
     }
 }
