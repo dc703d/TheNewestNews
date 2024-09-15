@@ -16,7 +16,6 @@ const FullArticle = () => {
         body,
     } = fields || {};
 
-    console.log({ story });
     console.log(webTitle);
 
     return (
