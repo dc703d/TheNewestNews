@@ -30,7 +30,6 @@
     &__article {
         margin: 8px;
         grid-area: "article";
-        margin: auto;
     }
 }
 
@@ -49,6 +48,9 @@
         display: none;
     }
     @include media.phone {
+        display: none;
+    }
+    @include media.large-phone {
         display: none;
     }
     @include media.kindle {
@@ -71,6 +73,14 @@
         &__homeArticles {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+        }
+        &__article {
+            margin: auto;
+        }
+        &__heading {
+            font-size: 24px;
+            margin-left: 0px;
         }
     }
     @include media.phone {
@@ -79,6 +89,26 @@
         &__homeArticles {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+        }
+
+        &__heading {
+            font-size: 24px;
+            margin-left: 0px;
+        }
+    }
+    @include media.large-phone {
+        display: block;
+        padding: 20px;
+        &__homeArticles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+        }
+
+        &__heading {
+            font-size: 24px;
+            margin-left: 0px;
         }
     }
     @include media.kindle {

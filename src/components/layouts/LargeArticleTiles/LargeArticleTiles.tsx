@@ -136,7 +136,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
             </div>
             {/* ////////////////////add container with less elements */}
             <div className="articleContainerLess">
-                <h1>{heading}</h1>
+                <h1 className="articleContainerLess__heading">{heading}</h1>
                 <div className="articleContainerLess__content">
                     <div className="articleContainerLess__largeArticle">
                         {topStories.slice(0, 1).map((story) => {

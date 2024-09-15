@@ -47,6 +47,18 @@
             text-align: right;
         }
     }
+    @include media.large-phone {
+        width: 145px;
+        height: 185px;
+        &__heading {
+            font-size: 8px;
+            margin: 0px 4px;
+        }
+        &__date {
+            font-size: 7px;
+            text-align: right;
+        }
+    }
     @include media.kindle {
         width: 120px;
         height: 170px;

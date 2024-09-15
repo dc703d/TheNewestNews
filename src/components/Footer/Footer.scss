@@ -10,6 +10,7 @@
     color: white;
     padding: 5px 0px;
     &__heading {
+        align-self: center;
         margin-left: 40px;
         text-decoration: none;
         color: white;
@@ -26,16 +27,59 @@
 @include media.small-phone {
     .footer {
         flex-direction: column;
-        padding: 10px;
+        width: 100%;
         text-align: center;
         &__heading {
             font-size: 18px;
             margin: 0px;
+            margin-top: 10px;
         }
         &__copyright {
-            font-size: 6px;
+            max-width: 80%;
+            font-size: 5px;
             margin: 0px;
             padding-top: 0px;
+            padding-bottom: 15px;
+        }
+    }
+}
+
+@include media.phone {
+    .footer {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        &__heading {
+            font-size: 20px;
+            margin: 0px;
+            margin-top: 10px;
+        }
+        &__copyright {
+            max-width: 80%;
+            font-size: 8px;
+            margin: 0px;
+            padding-top: 0px;
+            padding-bottom: 15px;
+        }
+    }
+}
+
+@include media.large-phone {
+    .footer {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        &__heading {
+            font-size: 20px;
+            margin: 0px;
+            margin-top: 10px;
+        }
+        &__copyright {
+            max-width: 80%;
+            font-size: 8px;
+            margin: 0px;
+            padding-top: 0px;
+            padding-bottom: 15px;
         }
     }
 }

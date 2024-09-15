@@ -44,6 +44,9 @@
     @include media.phone {
         display: none;
     }
+    @include media.large-phone {
+        display: none;
+    }
     @include media.kindle {
         display: none;
     }
@@ -66,6 +69,9 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
+        &__heading {
+            font-size: 24px;
+        }
     }
     @include media.phone {
         padding: 20px;
@@ -73,6 +79,17 @@
         &__content {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @include media.large-phone {
+        padding: 20px;
+        display: block;
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__heading {
+            font-size: 24px;
         }
     }
     @include media.kindle {

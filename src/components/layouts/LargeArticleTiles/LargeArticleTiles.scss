@@ -44,6 +44,10 @@
             margin-top: 20px;
             grid-template-columns: repeat(2, 1fr);
         }
+        &__heading {
+            font-size: 24px;
+            padding-left: 11px;
+        }
     }
     .articleContainer {
         display: none;
@@ -63,6 +67,30 @@
             display: grid;
             margin-top: 20px;
             grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .articleContainer {
+        display: none;
+    }
+}
+
+@include media.large-phone {
+    .articleContainerLess {
+        padding: 20px;
+        display: block;
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &__homeArticles {
+            display: grid;
+            margin-top: 20px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__heading {
+            font-size: 24px;
         }
     }
     .articleContainer {

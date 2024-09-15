@@ -72,6 +72,18 @@
             margin: 5px 0px 0px 10px;
         }
     }
+    @include media.large-phone {
+        &__list {
+            display: none;
+        }
+        &__item {
+            display: block;
+        }
+        &__logo {
+            width: 100px;
+            margin: 5px 0px 0px 10px;
+        }
+    }
     @include media.kindle {
         &__list {
             display: none;

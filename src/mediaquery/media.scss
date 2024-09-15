@@ -12,6 +12,12 @@
     }
 }
 
+@mixin large-phone {
+    @media screen and (min-width: ($xxxxxs + 1px)) and (max-width: ($xxxxs)) {
+        @content;
+    }
+}
+
 @mixin kindle {
     @media screen and (min-width: ($xxxxs + 1px)) and (max-width: ($xxxs)) {
         @content;
