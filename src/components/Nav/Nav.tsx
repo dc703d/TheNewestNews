@@ -14,11 +14,11 @@ const Nav = () => {
     return (
         <div className="navigation">
             {showNav && <HamburgerMenu onClose={toggleNav} />}
-            <Link className="navigation__heading" to={"/"}>
+            <Link className="navigation__heading" to={"/TheNewestNews/"}>
                 <img src={tnn_logo} className="navigation__logo" />
             </Link>
             <ul className="navigation__list">
-                <Link className="navigation__list--item" to={"/"}>
+                <Link className="navigation__list--item" to={"/TheNewestNews/"}>
                     Trending
                 </Link>
                 <Link className="navigation__list--item" to={"/business"}>
