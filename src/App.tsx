@@ -26,7 +26,7 @@ const App = () => {
                 <Nav />
                 <Routes>
                     <Route
-                        path="/"
+                        path="/TheNewestNews/"
                         element={
                             <>
                                 <SearchBar />
