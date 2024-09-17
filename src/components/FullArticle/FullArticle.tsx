@@ -14,7 +14,7 @@ const FullArticle = () => {
         firstPublicationDate,
         thumbnail,
         body,
-    } = fields || null;
+    } = fields || {};
 
     console.log(webTitle);
     console.log(firstPublicationDate);
