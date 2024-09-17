@@ -30,6 +30,7 @@
         position: absolute;
         top: 2rem;
         right: 2rem;
+        filter: invert(1) brightness(500%);
 
         &:hover {
             cursor: pointer;

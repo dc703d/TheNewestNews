@@ -74,7 +74,6 @@ const Banner = ({ url, heading, colour }: BannerProps) => {
                     })}
                 </div>
             </div>
-            {/* //////// add less cards */}
 
             <div className={`bannerContainerLess bannerContainer--${colour}`}>
                 <h1 className="bannerContainerLess__heading">{heading}</h1>

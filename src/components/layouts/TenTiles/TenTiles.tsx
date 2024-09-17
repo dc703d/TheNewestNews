@@ -73,7 +73,6 @@ const TenTiles = ({ url, heading }: TenTilesProps) => {
                     })}
                 </div>
             </div>
-            {/* /////////////// */}
 
             <div className="contentContainerLess">
                 <h1 className="contentContainerLess__heading">{heading}</h1>

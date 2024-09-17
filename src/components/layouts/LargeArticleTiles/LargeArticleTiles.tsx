@@ -133,7 +133,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                     </div>
                 </div>
             </div>
-            {/* ////////////////////add container with less elements */}
+
             <div className="articleContainerLess">
                 <h1 className="articleContainerLess__heading">{heading}</h1>
                 <div className="articleContainerLess__content">

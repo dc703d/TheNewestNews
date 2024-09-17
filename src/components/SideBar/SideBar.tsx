@@ -17,7 +17,6 @@ const SideBar = ({ url, id }: SideBarProps) => {
             .then((res) => {
                 return res.json();
             })
-            // .then((data) => setContent(data["response"]["results"].filter( sectionId  == "crossword").slice(0, 3)))
 
             .then((data) => setContent(data["response"]["results"].slice(0, 6)))
             .catch((err) => console.log(err));
