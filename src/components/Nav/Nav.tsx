@@ -21,22 +21,40 @@ const Nav = () => {
                 <Link className="navigation__list--item" to={"/TheNewestNews/"}>
                     Trending
                 </Link>
-                <Link className="navigation__list--item" to={"/business"}>
+                <Link
+                    className="navigation__list--item"
+                    to={"/TheNewestNews/business"}
+                >
                     Business
                 </Link>
-                <Link className="navigation__list--item" to={"/entertainment"}>
+                <Link
+                    className="navigation__list--item"
+                    to={"/TheNewestNews/entertainment"}
+                >
                     Entertainment
                 </Link>
-                <Link className="navigation__list--item" to={"/sports"}>
+                <Link
+                    className="navigation__list--item"
+                    to={"/TheNewestNews/sports"}
+                >
                     Sports
                 </Link>
-                <Link className="navigation__list--item" to={"/science"}>
+                <Link
+                    className="navigation__list--item"
+                    to={"/TheNewestNews/science"}
+                >
                     Science
                 </Link>
-                <Link className="navigation__list--item" to={"/technology"}>
+                <Link
+                    className="navigation__list--item"
+                    to={"/TheNewestNews/technology"}
+                >
                     Technology
                 </Link>
-                <Link className="navigation__list--item" to={"/health"}>
+                <Link
+                    className="navigation__list--item"
+                    to={"/TheNewestNews/health"}
+                >
                     Health
                 </Link>
             </ul>

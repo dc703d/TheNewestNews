@@ -20,49 +20,49 @@ const HamburgerMenu = ({ onClose }: HamburgerMenuProps) => {
                 <ul className="hamburger__list">
                     <Link
                         className="hamburger__list--item"
-                        to={"/"}
+                        to={"/TheNewestNews/"}
                         onClick={onClose}
                     >
                         Trending
                     </Link>
                     <Link
                         className="hamburger__list--item"
-                        to={"/business"}
+                        to={"/TheNewestNews/business"}
                         onClick={onClose}
                     >
                         Business
                     </Link>
                     <Link
                         className="hamburger__list--item"
-                        to={"/entertainment"}
+                        to={"/TheNewestNews/entertainment"}
                         onClick={onClose}
                     >
                         Entertainment
                     </Link>
                     <Link
                         className="hamburger__list--item"
-                        to={"/sports"}
+                        to={"/TheNewestNews/sports"}
                         onClick={onClose}
                     >
                         Sports
                     </Link>
                     <Link
                         className="hamburger__list--item"
-                        to={"/science"}
+                        to={"/TheNewestNews/science"}
                         onClick={onClose}
                     >
                         Science
                     </Link>
                     <Link
                         className="hamburger__list--item"
-                        to={"/technology"}
+                        to={"/TheNewestNews/technology"}
                         onClick={onClose}
                     >
                         Technology
                     </Link>
                     <Link
                         className="hamburger__list--item"
-                        to={"/health"}
+                        to={"/TheNewestNews/health"}
                         onClick={onClose}
                     >
                         Health

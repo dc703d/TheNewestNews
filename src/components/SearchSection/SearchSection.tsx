@@ -72,7 +72,7 @@ const SearchSection = () => {
                                 ) ? (
                                     <div className="contentContainer__article">
                                         <Link
-                                            to={`/${story.webTitle}`}
+                                            to={`/TheNewestNews/${story.webTitle}`}
                                             state={{ story }}
                                         >
                                             <ArticleCard

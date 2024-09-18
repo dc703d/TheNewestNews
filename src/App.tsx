@@ -41,7 +41,7 @@ const App = () => {
                         }
                     />
                     <Route
-                        path="/technology"
+                        path="/TheNewestNews/technology"
                         element={
                             <>
                                 <SearchBar />
@@ -50,7 +50,7 @@ const App = () => {
                         }
                     />
                     <Route
-                        path="/business"
+                        path="/TheNewestNews/business"
                         element={
                             <>
                                 <SearchBar />
@@ -59,7 +59,7 @@ const App = () => {
                         }
                     />
                     <Route
-                        path="/sports"
+                        path="/TheNewestNews/sports"
                         element={
                             <>
                                 <SearchBar />
@@ -68,7 +68,7 @@ const App = () => {
                         }
                     />
                     <Route
-                        path="/science"
+                        path="/TheNewestNews/science"
                         element={
                             <>
                                 <SearchBar />
@@ -77,7 +77,7 @@ const App = () => {
                         }
                     />
                     <Route
-                        path="/health"
+                        path="/TheNewestNews/health"
                         element={
                             <>
                                 <SearchBar />
@@ -86,7 +86,7 @@ const App = () => {
                         }
                     />
                     <Route
-                        path="/entertainment"
+                        path="/TheNewestNews/entertainment"
                         element={
                             <>
                                 <SearchBar />
@@ -95,7 +95,7 @@ const App = () => {
                         }
                     />
                     <Route
-                        path="/search"
+                        path="/TheNewestNews/search"
                         element={
                             <>
                                 <SearchSection />
@@ -103,7 +103,7 @@ const App = () => {
                         }
                     />
                     <Route
-                        path="/:webTitle"
+                        path="/TheNewestNews/:webTitle"
                         element={
                             <>
                                 <SearchBar />
