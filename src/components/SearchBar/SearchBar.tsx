@@ -12,7 +12,7 @@ const SearchBar = ({ searchTerm, handleInput }: SearchBarProps) => {
         <div className="searchbar">
             <div className="searchbar__inner">
                 <label>Search: </label>
-                <Link to={"/search"}>
+                <Link to={"/TheNewestNews/search"}>
                     <input
                         type="text"
                         className="searchbar__input"
