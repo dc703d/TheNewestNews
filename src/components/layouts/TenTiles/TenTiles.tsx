@@ -47,7 +47,7 @@ const TenTiles = ({ url, heading }: TenTilesProps) => {
                                 ) ? (
                                     <div className="contentContainer__article">
                                         <Link
-                                            to={`/${story.webTitle}`}
+                                            to={`/TheNewestNews/${story.webTitle}`}
                                             state={{ story }}
                                         >
                                             <ArticleCard
@@ -95,7 +95,7 @@ const TenTiles = ({ url, heading }: TenTilesProps) => {
                                 ) ? (
                                     <div className="contentContainerLess__article">
                                         <Link
-                                            to={`/${story.webTitle}`}
+                                            to={`/TheNewestNews/${story.webTitle}`}
                                             state={{ story }}
                                         >
                                             <ArticleCard

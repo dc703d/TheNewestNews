@@ -56,7 +56,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                                         />
                                     ) ? (
                                         <Link
-                                            to={`/${story.webTitle}`}
+                                            to={`/TheNewestNews/${story.webTitle}`}
                                             state={{ story }}
                                         >
                                             <LargeArticle
@@ -106,7 +106,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                                         />
                                     ) ? (
                                         <Link
-                                            to={`/${story.webTitle}`}
+                                            to={`/TheNewestNews/${story.webTitle}`}
                                             state={{ story }}
                                         >
                                             <ArticleCard
@@ -161,7 +161,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                                         />
                                     ) ? (
                                         <Link
-                                            to={`/${story.webTitle}`}
+                                            to={`/TheNewestNews/${story.webTitle}`}
                                             state={{ story }}
                                         >
                                             <LargeArticle
@@ -211,7 +211,7 @@ const LargeArticleTiles = ({ url, heading }: LargeArticleTilesProps) => {
                                         />
                                     ) ? (
                                         <Link
-                                            to={`/${story.webTitle}`}
+                                            to={`/TheNewestNews/${story.webTitle}`}
                                             state={{ story }}
                                         >
                                             <ArticleCard

@@ -43,7 +43,7 @@ const SideBar = ({ url, id }: SideBarProps) => {
                                     />
                                 ) ? (
                                     <Link
-                                        to={`/${story.webTitle}`}
+                                        to={`/TheNewestNews/${story.webTitle}`}
                                         state={{ story }}
                                     >
                                         <div className="sidebarContainer__article">

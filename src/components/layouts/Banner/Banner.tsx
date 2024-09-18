@@ -47,7 +47,7 @@ const Banner = ({ url, heading, colour }: BannerProps) => {
                                     />
                                 ) ? (
                                     <Link
-                                        to={`/${story.webTitle}`}
+                                        to={`/TheNewestNews/${story.webTitle}`}
                                         state={{ story }}
                                     >
                                         <div className="bannerContainer__article">
@@ -95,7 +95,7 @@ const Banner = ({ url, heading, colour }: BannerProps) => {
                                     />
                                 ) ? (
                                     <Link
-                                        to={`/${story.webTitle}`}
+                                        to={`/TheNewestNews/${story.webTitle}`}
                                         state={{ story }}
                                     >
                                         <div className="bannerContainerLess__article">
