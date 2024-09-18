@@ -1,5 +1,14 @@
-.contentContainer {
+.searchContainer {
+    padding: 50px;
+    &__heading {
+        margin-left: 10px;
+    }
+    &__searchArticles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     &__article {
-        gap: 16px;
+        margin: 8px;
     }
 }

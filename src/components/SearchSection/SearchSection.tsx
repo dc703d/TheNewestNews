@@ -52,8 +52,8 @@ const SearchSection = () => {
                 searchTerm={searchTermDisplay}
                 handleInput={handleInput}
             />
-            <div className="contentContainer">
-                <div className="contentContainer__contentArticles">
+            <div className="searchContainer">
+                <div className="searchContainer__searchArticles">
                     {filteredArticles.map((story) => {
                         return (
                             <div key={story["id"]}>
@@ -70,7 +70,7 @@ const SearchSection = () => {
                                         }
                                     />
                                 ) ? (
-                                    <div className="contentContainer__article">
+                                    <div className="searchContainer__article">
                                         <Link
                                             to={`/TheNewestNews/${story.webTitle}`}
                                             state={{ story }}
