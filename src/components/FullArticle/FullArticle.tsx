@@ -48,7 +48,7 @@ const FullArticle = () => {
                     </div>
                     <div className="fullArticle__sidebar">
                         <SideBar
-                            url={`https://content.guardianapis.com/${sectionId}?page=2&show-fields=all&api-key=3bdabd26-081c-4be3-acfa-e73952c73518`}
+                            url={`https://content.guardianapis.com/${sectionId}?page=2&show-fields=all&api-key=93aecaee-6677-4660-9158-21ab725e1151`}
                             id={id}
                         />
                     </div>

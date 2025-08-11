@@ -11,7 +11,7 @@ const SearchSection = () => {
         let pages: string | any[] = [];
         for (let i = 1; i <= 6; i++) {
             const response = await fetch(
-                `https://content.guardianapis.com/search?page=${i}&page-size=50&show-fields=all&api-key=3bdabd26-081c-4be3-acfa-e73952c73518`
+                `https://content.guardianapis.com/search?page=${i}&page-size=50&show-fields=all&api-key=93aecaee-6677-4660-9158-21ab725e1151`
             );
             const data = await response.json();
             pages.push(data["response"]["results"]);

@@ -8,7 +8,7 @@ const Archives = () => {
     const date = Math.floor(Math.random() * daysInMonth) + 1;
     return (
         <TenTiles
-            url={`https://content.guardianapis.com/search?order-by=oldest&from-date=${year}-${month}-${date}&show-fields=all&api-key=dc818f16-2179-4123-a127-0576c3fbcf15`}
+            url={`https://content.guardianapis.com/search?order-by=oldest&from-date=${year}-${month}-${date}&show-fields=all&api-key=93aecaee-6677-4660-9158-21ab725e1151`}
             heading="From the Archives"
         />
     );
